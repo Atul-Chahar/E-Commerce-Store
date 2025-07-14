@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="../../css/product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <section class="product-page">
+    <div class="product-image">
+      <img id="main-image" src="https://dlcdnwebimgs.asus.com/gain/06C71793-252B-46BF-93FD-3A0FFFE9D850/w1000/h732" alt="ROG Zephyrus G14">
+      <div class="image-preview">
+        <img src="https://dlcdnwebimgs.asus.com/gain/06C71793-252B-46BF-93FD-3A0FFFE9D850/w1000/h732" onclick="changeImage(this)">
+        <img src="https://dlcdnwebimgs.asus.com/gain/01302938-59F3-4094-900D-EF9ECBD412B6/w1000/h732" onclick="changeImage(this)">
+        <img src="https://dlcdnwebimgs.asus.com/gain/19B71925-F606-4243-A5DB-243885F4A926/w1000/h732" onclick="changeImage(this)">
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>ROG Zephyrus G14</h1>
+      <div class="price-cart">
+        <p class="price">₹1,79,990</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <p class="description">
+        The ROG Zephyrus G14 with an RTX 5060 is a high-performance, compact gaming laptop known for its portability and premium features. It boasts a powerful AMD Ryzen processor, a stunning 3K OLED display with a 120Hz refresh rate, and an RTX 5060 laptop GPU, offering a great balance of performance and portability. The laptop also features advanced cooling with liquid metal and Arc Flow fans, a premium aluminum chassis, and excellent audio with upgraded woofers and Dolby Atmos support. 
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function changeImage(el) {
+      document.getElementById('main-image').src = el.src;
+    }
+  </script>
+</body>
+<script>
+  function changeImage(el) {
+    document.getElementById('main-image').src = el.src;
+  }
+
+  document.querySelector('.add-to-cart').addEventListener('click', () => {
+    const product = {
+      name: "ROG Zephyrus G14",
+      price: 179990,
+      image: document.getElementById('main-image').src,
+      quantity: 1
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    const existing = cart.find(item => item.name === product.name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart!");
+  });
+</script>
+
+</html>
