@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team</title>
+  <style>
+    body {
+      background: linear-gradient(315deg, #0F172A, #1E293B, #3B82F6, #38BDF8, #E0F2FE);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #fff;
+      margin-bottom: 40px;
+      font-size: 3em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .card-container {
+      perspective: 1000px;
+    }
+
+    .card {
+      width: 250px;
+      height: 320px;
+      position: relative;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-sizing: border-box;
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #0F172A, #1E293B);
+      color: #fff;
+      transform: rotateY(0deg);
+      z-index: 2;
+      border: 1px solid #3B82F6;
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, #1E293B, #3B82F6);
+      color: #fff;
+      transform: rotateY(180deg);
+      text-align: center;
+      z-index: 1;
+      border: 1px solid #38BDF8;
+    }
+
+    .card:hover {
+      transform: rotateY(180deg);
+    }
+
+    .avatar {
+      background: linear-gradient(135deg, #3B82F6, #38BDF8);
+      padding: 20px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .avatar svg {
+      width: 80px;
+      height: 80px;
+      fill: #fff;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .contribution {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      color: #E0F2FE;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      margin-top: auto;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+      background: rgba(56, 189, 248, 0.2);
+    }
+
+    .socials svg {
+      width: 28px;
+      height: 28px;
+      fill: #38BDF8;
+    }
+
+    /* Add some glowing effect for modern look */
+    .card-front::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(56, 189, 248, 0.1));
+      border-radius: 20px;
+      z-index: -1;
+    }
+
+    .card-back::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(224, 242, 254, 0.1));
+      border-radius: 20px;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Our Teammates!</h1>
+
+  <div class="team-container">
+    <div class="card-container">
+      <div class="card">
+        <div class="card-front">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24" fill="#fff">
+              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.1 0-9.2 1.6-9.2 4.8v2.4h18.4v-2.4c0-3.2-6.1-4.8-9.2-4.8z"/>
+            </svg>
+          </div>
+          <h2 class="name">Atharva Borade</h2>
+        </div>
+        <div class="card-back">
+          <p class="contribution">UI Developer — built About us page!</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/atharvaborade._/" target = "_blank" Instagram">
+              <svg viewBox="0 0 24 24">
+                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm7.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/atharva-borade-800a5b31b/" target = "_blank" title="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.5S3.88 7.5 4.98 7.5 6.97 6.62 6.97 5.5 6.08 3.5 4.98 3.5zM3.5 8.5h2.9V20H3.5V8.5zm5.5 0h2.8v1.6h.04c.39-.74 1.3-1.52 2.67-1.52 2.85 0 3.38 1.88 3.38 4.32V20h-2.9v-5.6c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95V20H9V8.5z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/atharrva01" target = "_blank" title="GitHub">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.84 10.89.57.11.78-.25.78-.56v-2c-3.19.7-3.86-1.37-3.86-1.37-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.27.72-1.56-2.55-.29-5.23-1.28-5.23-5.72 0-1.26.45-2.3 1.2-3.11-.12-.29-.52-1.44.11-3 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0C17.95 5.1 18.9 5.4 18.9 5.4c.64 1.56.24 2.71.12 3 .75.81 1.2 1.85 1.2 3.11 0 4.45-2.69 5.43-5.25 5.71.42.36.77 1.07.77 2.15v3.18c0 .31.2.68.8.56A10.99 10.99 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <div class="card-front">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24" fill="#fff">
+              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.1 0-9.2 1.6-9.2 4.8v2.4h18.4v-2.4c0-3.2-6.1-4.8-9.2-4.8z"/>
+            </svg>
+          </div>
+          <h2 class="name">Atul Chahar</h2>
+        </div>
+        <div class="card-back">
+          <p class="contribution">UI Developer — built About us page!</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/atul__chahar?utm_source=qr&igsh=MXRwZXhsNzc2M2ozaQ==" target = "_blank" title="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm7.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+              </svg>
+            </a>
+            <a href=" https://www.linkedin.com/in/atul-chahar-1a79a5344/" target = "_blank" title="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.5S3.88 7.5 4.98 7.5 6.97 6.62 6.97 5.5 6.08 3.5 4.98 3.5zM3.5 8.5h2.9V20H3.5V8.5zm5.5 0h2.8v1.6h.04c.39-.74 1.3-1.52 2.67-1.52 2.85 0 3.38 1.88 3.38 4.32V20h-2.9v-5.6c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95V20H9V8.5z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/Atul-Chahar" target = "_blank" title="GitHub">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.84 10.89.57.11.78-.25.78-.56v-2c-3.19.7-3.86-1.37-3.86-1.37-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.27.72-1.56-2.55-.29-5.23-1.28-5.23-5.72 0-1.26.45-2.3 1.2-3.11-.12-.29-.52-1.44.11-3 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0C17.95 5.1 18.9 5.4 18.9 5.4c.64 1.56.24 2.71.12 3 .75.81 1.2 1.85 1.2 3.11 0 4.45-2.69 5.43-5.25 5.71.42.36.77 1.07.77 2.15v3.18c0 .31.2.68.8.56A10.99 10.99 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <div class="card-front">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24" fill="#fff">
+              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.1 0-9.2 1.6-9.2 4.8v2.4h18.4v-2.4c0-3.2-6.1-4.8-9.2-4.8z"/>
+            </svg>
+          </div>
+          <h2 class="name">Shivam</h2>
+        </div>
+        <div class="card-back">
+          <p class="contribution">UI Developer — built About us page!</p>
+          <div class="socials">
+            <a href="#" target = "_blank" title="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm7.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/shivam-singh-a879602ba/ " target = "_blank" title="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.5S3.88 7.5 4.98 7.5 6.97 6.62 6.97 5.5 6.08 3.5 4.98 3.5zM3.5 8.5h2.9V20H3.5V8.5zm5.5 0h2.8v1.6h.04c.39-.74 1.3-1.52 2.67-1.52 2.85 0 3.38 1.88 3.38 4.32V20h-2.9v-5.6c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95V20H9V8.5z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/Tech-Psycho95" target = "_blank" title="GitHub">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.84 10.89.57.11.78-.25.78-.56v-2c-3.19.7-3.86-1.37-3.86-1.37-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.27.72-1.56-2.55-.29-5.23-1.28-5.23-5.72 0-1.26.45-2.3 1.2-3.11-.12-.29-.52-1.44.11-3 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0C17.95 5.1 18.9 5.4 18.9 5.4c.64 1.56.24 2.71.12 3 .75.81 1.2 1.85 1.2 3.11 0 4.45-2.69 5.43-5.25 5.71.42.36.77 1.07.77 2.15v3.18c0 .31.2.68.8.56A10.99 10.99 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <div class="card-front">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24" fill="#fff">
+              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.1 0-9.2 1.6-9.2 4.8v2.4h18.4v-2.4c0-3.2-6.1-4.8-9.2-4.8z"/>
+            </svg>
+          </div>
+          <h2 class="name">Pranshi</h2>
+        </div>
+        <div class="card-back">
+          <p class="contribution">UI Developer — built About us page!</p>
+          <div class="socials">
+            <a href="#" title="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm7.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+              </svg>
+            </a>
+            <a href="#" title="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.5S3.88 7.5 4.98 7.5 6.97 6.62 6.97 5.5 6.08 3.5 4.98 3.5zM3.5 8.5h2.9V20H3.5V8.5zm5.5 0h2.8v1.6h.04c.39-.74 1.3-1.52 2.67-1.52 2.85 0 3.38 1.88 3.38 4.32V20h-2.9v-5.6c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95V20H9V8.5z"/>
+              </svg>
+            </a>
+            <a href="#" title="GitHub">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.84 10.89.57.11.78-.25.78-.56v-2c-3.19.7-3.86-1.37-3.86-1.37-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.27.72-1.56-2.55-.29-5.23-1.28-5.23-5.72 0-1.26.45-2.3 1.2-3.11-.12-.29-.52-1.44.11-3 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0C17.95 5.1 18.9 5.4 18.9 5.4c.64 1.56.24 2.71.12 3 .75.81 1.2 1.85 1.2 3.11 0 4.45-2.69 5.43-5.25 5.71.42.36.77 1.07.77 2.15v3.18c0 .31.2.68.8.56A10.99 10.99 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <div class="card-front">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24" fill="#fff">
+              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.1 0-9.2 1.6-9.2 4.8v2.4h18.4v-2.4c0-3.2-6.1-4.8-9.2-4.8z"/>
+            </svg>
+          </div>
+          <h2 class="name">Aditya Shinde</h2>
+        </div>
+        <div class="card-back">
+          <p class="contribution">UI Developer — built About us page!</p>
+          <div class="socials">
+            <a href="#" title="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm7.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+              </svg>
+            </a>
+            <a href="#" title="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.5S3.88 7.5 4.98 7.5 6.97 6.62 6.97 5.5 6.08 3.5 4.98 3.5zM3.5 8.5h2.9V20H3.5V8.5zm5.5 0h2.8v1.6h.04c.39-.74 1.3-1.52 2.67-1.52 2.85 0 3.38 1.88 3.38 4.32V20h-2.9v-5.6c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95V20H9V8.5z"/>
+              </svg>
+            </a>
+            <a href="#" title="GitHub">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.84 10.89.57.11.78-.25.78-.56v-2c-3.19.7-3.86-1.37-3.86-1.37-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.27.72-1.56-2.55-.29-5.23-1.28-5.23-5.72 0-1.26.45-2.3 1.2-3.11-.12-.29-.52-1.44.11-3 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0C17.95 5.1 18.9 5.4 18.9 5.4c.64 1.56.24 2.71.12 3 .75.81 1.2 1.85 1.2 3.11 0 4.45-2.69 5.43-5.25 5.71.42.36.77 1.07.77 2.15v3.18c0 .31.2.68.8.56A10.99 10.99 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-container">
+        <div class="card">
+          <div class="card-front">
+            <div class="avatar">
+              <svg viewBox="0 0 24 24" fill="#fff">
+                <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.1 0-9.2 1.6-9.2 4.8v2.4h18.4v-2.4c0-3.2-6.1-4.8-9.2-4.8z"/>
+              </svg>
+            </div>
+            <h2 class="name">Sujith</h2>
+          </div>
+          <div class="card-back">
+            <p class="contribution">UI Developer — built About us page!</p>
+            <div class="socials">
+              <a href="#" title="Instagram">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm7.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                </svg>
+              </a>
+              <a href="#" title="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.5S3.88 7.5 4.98 7.5 6.97 6.62 6.97 5.5 6.08 3.5 4.98 3.5zM3.5 8.5h2.9V20H3.5V8.5zm5.5 0h2.8v1.6h.04c.39-.74 1.3-1.52 2.67-1.52 2.85 0 3.38 1.88 3.38 4.32V20h-2.9v-5.6c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95V20H9V8.5z"/>
+                </svg>
+              </a>
+              <a href="#" title="GitHub">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.84 10.89.57.11.78-.25.78-.56v-2c-3.19.7-3.86-1.37-3.86-1.37-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.27.72-1.56-2.55-.29-5.23-1.28-5.23-5.72 0-1.26.45-2.3 1.2-3.11-.12-.29-.52-1.44.11-3 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0C17.95 5.1 18.9 5.4 18.9 5.4c.64 1.56.24 2.71.12 3 .75.81 1.2 1.85 1.2 3.11 0 4.45-2.69 5.43-5.25 5.71.42.36.77 1.07.77 2.15v3.18c0 .31.2.68.8.56A10.99 10.99 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+</body>
+</html>

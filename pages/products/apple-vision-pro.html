@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="../../css/product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <section class="product-page">
+    <div class="product-image">
+      <img id="main-image" src="../../images/vr-headset.jpeg" alt="Apple Vision Pro">
+      <div class="image-preview">
+        <img src="../../images/vr-headset.jpeg" onclick="changeImage(this)">
+        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTtqYLobojFYeWdzs0TJ7eYVCNm8v567-FxTP4SFKZnn3e3n3mAw5FPBIkiHUixjadlQkUoFUJE4t3nIIUSwVs0B01NJjKj7g" onclick="changeImage(this)">
+        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS-tsURxE2gXgtwR6eMk_xOayiJVseMBXCFTC2U4h6Eu2LmME4" onclick="changeImage(this)">
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>Apple Vision Pro</h1>
+      <div class="price-cart">
+        <p class="price">₹2,99,999</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <p class="description">
+        Apple Vision Pro is a mixed-reality headset that blends digital content with the user's physical space, creating a "spatial computing" experience. It combines augmented reality (AR) and virtual reality (VR) capabilities, allowing users to either immerse themselves in virtual environments or overlay digital content onto their surroundings. The device features a three-dimensional interface, spatial audio, and uses eye, hand, and voice inputs for navigation. 
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function changeImage(el) {
+      document.getElementById('main-image').src = el.src;
+    }
+  </script>
+</body>
+<script>
+  function changeImage(el) {
+    document.getElementById('main-image').src = el.src;
+  }
+
+  document.querySelector('.add-to-cart').addEventListener('click', () => {
+    const product = {
+      name: "Apple Vision Pro",
+      price: 299999,
+      image: document.getElementById('main-image').src,
+      quantity: 1
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    const existing = cart.find(item => item.name === product.name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart!");
+  });
+</script>
+
+</html>
