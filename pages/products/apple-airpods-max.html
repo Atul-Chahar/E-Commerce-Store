@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="../../css/product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <section class="product-page">
+    <div class="product-image">
+      <img id="main-image" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-skyblue-202011?wid=470&hei=556&fmt=png-alpha&.v=1604022365000" alt="AirPods Max">
+      <div class="image-preview">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-green-202011?wid=470&hei=556&fmt=png-alpha&.v=1604022365000" alt="Green" onclick="changeImage(this)">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-pink-202011?wid=470&hei=556&fmt=png-alpha&.v=1604022365000" alt="Pink" onclick="changeImage(this)">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-silver-202011?wid=470&hei=556&fmt=png-alpha&.v=1604022365000" alt="Silver" onclick="changeImage(this)">
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>Apple AirPods Max</h1>
+      <div class="price-cart">
+        <p class="price">₹59,900</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <p class="description">
+        Apple-designed dynamic driver for high-fidelity audio, Active Noise Cancellation for immersive sound, Transparency mode, and spatial audio with dynamic head tracking for theater-like surround.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function changeImage(el) {
+      document.getElementById('main-image').src = el.src;
+    }
+  </script>
+</body>
+<script>
+  function changeImage(el) {
+    document.getElementById('main-image').src = el.src;
+  }
+
+  document.querySelector('.add-to-cart').addEventListener('click', () => {
+    const product = {
+      name: "Apple AirPods Max",
+      price: 59900,
+      image: document.getElementById('main-image').src,
+      quantity: 1
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    const existing = cart.find(item => item.name === product.name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart!");
+  });
+</script>
+
+</html>

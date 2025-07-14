@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e9f0fa 0%, #dbeafe 100%);
+  color: #111827;
+}
+
+.home-button {
+  display: inline-block;
+  margin: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #2563eb;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+
+.cart-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 40px 16px 24px;
+  color: #1e3a8a;
+}
+
+.product {
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  margin: 24px auto;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.product-image {
+  width: 180px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: contain;
+  background: #f9fafb;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-details h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.product-details p {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #2563eb;
+}
+
+.product-details input[type='number'] {
+  padding: 8px;
+  width: 60px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  margin-left: 8px;
+}
+
+.remove {
+  margin-top: 12px;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.remove:hover {
+  background: #b91c1c;
+}
+
+.placeorder {
+  max-width: 1000px;
+  margin: 40px auto;
+  text-align: right;
+  padding: 0 16px;
+}
+
+.total {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.placeorder button {
+  background: #2563eb;
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 1rem;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.placeorder button:hover {
+  background: #1e40af;
+}
+
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-image {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .product-details input[type='number'] {
+    width: 80px;
+    margin-top: 8px;
+  }
+
+  .placeorder {
+    text-align: center;
+  }
+}

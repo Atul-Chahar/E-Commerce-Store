@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beats Studio3 Wireless</title>
+  <link rel="stylesheet" href="../../css/product.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="product-page">
+    <div class="product-image">
+      <img id="main-image" src="https://www.beatsbydre.com/content/dam/beats/web/product/headphones/studiopro-wireless/pdp/product-carousel/black/alt/black-06-studiopro.jpg.large.2x.jpg" alt="Beats Studio3">
+      <div class="image-preview">
+        <img src="https://www.beatsbydre.com/content/dam/beats/web/product/headphones/studiopro-wireless/pdp/product-carousel/black/alt/black-01-studiopro.jpg.large.2x.jpg" alt="Black" onclick="changeImage(this)">
+        <img src="https://www.beatsbydre.com/content/dam/beats/web/product/headphones/studiopro-wireless/pdp/product-carousel/black/alt/black-02-studiopro.jpg.large.2x.jpg" alt="Red" onclick="changeImage(this)">
+        <img src="https://www.beatsbydre.com/content/dam/beats/web/product/headphones/studiopro-wireless/pdp/product-carousel/black/alt/black-06-studiopro.jpg.large.2x.jpg" alt="White" onclick="changeImage(this)">
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>Beats Studio3 Wireless</h1>
+      <div class="price-cart">
+        <p class="price">₹24,999</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <p class="description">
+        Featuring a fully custom-made acoustic platform. Personalised spatial audio with dynamic head tracking.3 Fully adaptive Active Noise Cancelling. Transparency mode. Lossless audio.2 Up to 40 hours of battery life1 and enhanced Apple and Android compatibility.      </p>
+    </div>
+  </section>
+
+  <script>
+    function changeImage(el) {
+      document.getElementById('main-image').src = el.src;
+    }
+
+    document.querySelector('.add-to-cart').addEventListener('click', () => {
+      const product = {
+        name: "Beats Studio3 Wireless",
+        price: 24999,
+        image: document.getElementById('main-image').src,
+        quantity: 1
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.name === product.name);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Product added to cart!");
+    });
+  </script>
+</body>
+</html>

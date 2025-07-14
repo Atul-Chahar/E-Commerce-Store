@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="../../css/product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <section class="product-page">
+    <div class="product-image">
+      <img id="main-image" src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/9345/media-gallery/touch/gray/notebook-xps-13-9345-t-gray-gallery-2.psd?fmt=png-alpha&pscan=auto&scl=1&wid=3988&hei=2361&qlt=100,1&resMode=sharp2&size=3988,2361&chrss=full&imwidth=5000" alt="Dell XPS 13">
+      <div class="image-preview">
+        <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/9345/media-gallery/touch/gray/notebook-xps-13-9345-t-gray-gallery-2.psd?fmt=png-alpha&pscan=auto&scl=1&wid=3988&hei=2361&qlt=100,1&resMode=sharp2&size=3988,2361&chrss=full&imwidth=5000" onclick="changeImage(this)">
+        <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/9345/media-gallery/touch/gray/notebook-xps-13-9345-t-gray-gallery-4.psd?fmt=png-alpha&pscan=auto&scl=1&wid=3509&hei=2082&qlt=100,1&resMode=sharp2&size=3509,2082&chrss=full&imwidth=5000" onclick="changeImage(this)">
+        <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/9345/media-gallery/touch/gray/notebook-xps-13-9345-t-gray-gallery-6.psd?fmt=png-alpha&pscan=auto&scl=1&wid=3755&hei=2244&qlt=100,1&resMode=sharp2&size=3755,2244&chrss=full&imwidth=5000" onclick="changeImage(this)">
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>Dell XPS 13</h1>
+      <div class="price-cart">
+        <p class="price">₹1,47,490</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <p class="description">
+        The Dell XPS 13 with Snapdragon X Elite is a sleek, lightweight laptop known for its impressive battery life and strong performance, particularly for everyday tasks and AI-powered applications. It features a premium design, a vibrant display, and is designed for efficient multitasking and on-the-go use.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function changeImage(el) {
+      document.getElementById('main-image').src = el.src;
+    }
+  </script>
+</body>
+<script>
+  function changeImage(el) {
+    document.getElementById('main-image').src = el.src;
+  }
+
+  document.querySelector('.add-to-cart').addEventListener('click', () => {
+    const product = {
+      name: "Dell XPS 13",
+      price: 147490,
+      image: document.getElementById('main-image').src,
+      quantity: 1
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    const existing = cart.find(item => item.name === product.name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart!");
+  });
+</script>
+
+</html>

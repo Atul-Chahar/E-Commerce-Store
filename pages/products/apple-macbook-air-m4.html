@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="../../css/product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <section class="product-page">
+    <div class="product-image">
+      <img id="main-image" src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-m4-skyblue-gallery1-202503?wid=4000&hei=3074&fmt=jpeg&qlt=90&.v=dFJNbHJtN3hkZlFORmN2VUlkWnZyRXYwRGVrS3RUdEhkRUtkS2E1aGdYZmd1eUJ6eHZMSFFNMld6aTRncXNRUlJWYlIvRkkxemNIb09FY29ZRmVrUDV4ZVYvN2VacDZmMzVpdWVtV014N1RyMTdVV05yRXMxSlVPemtESDIwNVE" alt="Macbook Air M4">
+      <div class="image-preview">
+        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-m4-skyblue-gallery1-202503?wid=4000&hei=3074&fmt=jpeg&qlt=90&.v=dFJNbHJtN3hkZlFORmN2VUlkWnZyRXYwRGVrS3RUdEhkRUtkS2E1aGdYZmd1eUJ6eHZMSFFNMld6aTRncXNRUlJWYlIvRkkxemNIb09FY29ZRmVrUDV4ZVYvN2VacDZmMzVpdWVtV014N1RyMTdVV05yRXMxSlVPemtESDIwNVE" onclick="changeImage(this)">
+        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-m4-skyblue-gallery2-202503?wid=4000&hei=3074&fmt=jpeg&qlt=90&.v=dFJNbHJtN3hkZlFORmN2VUlkWnZySHB1eEZuT0djdFIvaGtSV0tRQ3lXcmd1eUJ6eHZMSFFNMld6aTRncXNRUlJWYlIvRkkxemNIb09FY29ZRmVrUDVRZFpWRGhqRDhIZHNORWNaTWxnaCtycDU0Zm9tS1NLYWZhaWJKS1VJSUo" onclick="changeImage(this)">
+        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-m4-skyblue-gallery4-202503?wid=4000&hei=3074&fmt=jpeg&qlt=90&.v=dFJNbHJtN3hkZlFORmN2VUlkWnZyS090QVV3bTNqT2lCUW11ak84QUNXUGd1eUJ6eHZMSFFNMld6aTRncXNRUlJWYlIvRkkxemNIb09FY29ZRmVrUDk3b3A2MTZjVElvS05OR0xlT2MraklnbVJYM29hTEY2aG9Va0ptMTVFdnI" onclick="changeImage(this)">
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>Apple MacBook Air M4</h1>
+      <div class="price-cart">
+        <p class="price">₹99,900</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <p class="description">
+        The MacBook Air M4 is a powerful and portable laptop featuring the Apple M4 chip, offering enhanced performance and efficiency for both work and play. It boasts a brilliant Liquid Retina display, up to 18 hours of battery life, and a thin, lightweight design. The M4 chip enables smooth multitasking, video editing, and even graphically demanding games. It also features Apple Intelligence for effortless task completion and groundbreaking privacy features. The MacBook Air M4 is available in a new Sky Blue color, alongside Silver, Starlight, and Midnight. 
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function changeImage(el) {
+      document.getElementById('main-image').src = el.src;
+    }
+  </script>
+</body>
+<script>
+  function changeImage(el) {
+    document.getElementById('main-image').src = el.src;
+  }
+
+  document.querySelector('.add-to-cart').addEventListener('click', () => {
+    const product = {
+      name: "Apple MacBook M4",
+      price: 99900,
+      image: document.getElementById('main-image').src,
+      quantity: 1
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    const existing = cart.find(item => item.name === product.name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart!");
+  });
+</script>
+
+</html>

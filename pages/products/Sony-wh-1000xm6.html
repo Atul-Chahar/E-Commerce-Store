@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sony WH-1000XM5</title>
+  <link rel="stylesheet" href="../../css/product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <section class="product-page">
+    <div class="product-image">
+      <img id="main-image" src="https://d1ncau8tqf99kp.cloudfront.net/converted/128942_original_local_1200x1050_v3_converted.webp" alt="Sony WH-1000XM5">
+      <div class="image-preview">
+        <img src="https://d1ncau8tqf99kp.cloudfront.net/converted/129166_original_local_1200x1050_v3_converted.webp" alt="Black" onclick="changeImage(this)">
+        <img src="https://d1ncau8tqf99kp.cloudfront.net/converted/128942_original_local_1200x1050_v3_converted.webp" alt="Silver" onclick="changeImage(this)">
+        <img src="https://d1ncau8tqf99kp.cloudfront.net/converted/129168_original_local_1200x1050_v3_converted.webp" alt="Blue" onclick="changeImage(this)">
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>Sony WH-1000XM6</h1>
+      <div class="price-cart">
+        <p class="price">₹29,990</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <p class="description">
+        The Sony WH-1000XM6 headphones are a premium over-ear wireless model featuring improved noise cancellation, a redesigned foldable design, and enhanced comfort features. They include a 12-microphone setup for superior noise canceling and adaptive sound, and support LE Audio for low-latency connections. The headphones also boast a long battery life and come in new colors like Midnight Blue. 
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function changeImage(el) {
+      document.getElementById('main-image').src = el.src;
+    }
+
+    document.querySelector('.add-to-cart').addEventListener('click', () => {
+      const product = {
+        name: "Sony WH-1000XM6",
+        price: 29990,
+        image: document.getElementById('main-image').src,
+        quantity: 1
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.name === product.name);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Product added to cart!");
+    });
+  </script>
+</body>
+</html>
